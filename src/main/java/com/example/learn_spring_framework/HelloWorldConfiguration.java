@@ -30,9 +30,20 @@ public class HelloWorldConfiguration {
         return new Person(name(),age(), address()); //One way is through Method call
     }
 
+    //Creating a new Person using Parameters
+    @Bean
+    public Person person3(String name, int age, Address address1){ // Passing the parameters (name, age and address)
+        return new Person(name, age, address1); // calling the parameters
+    }
+
     @Bean
     public Address address(){
         return new Address("Oracle Rd", "Wilmington");
+    }
+
+    @Bean(name = "address1")
+    public Address address1(){
+        return new Address("Baker Street", "London");
     }
 
 
